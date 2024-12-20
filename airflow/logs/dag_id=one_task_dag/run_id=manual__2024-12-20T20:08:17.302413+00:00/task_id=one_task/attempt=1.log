@@ -1,0 +1,23 @@
+[2024-12-20T20:08:19.577+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: one_task_dag.one_task manual__2024-12-20T20:08:17.302413+00:00 [queued]>
+[2024-12-20T20:08:19.583+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: one_task_dag.one_task manual__2024-12-20T20:08:17.302413+00:00 [queued]>
+[2024-12-20T20:08:19.583+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2024-12-20T20:08:19.598+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): one_task> on 2024-12-20 20:08:17.302413+00:00
+[2024-12-20T20:08:19.601+0000] {standard_task_runner.py:57} INFO - Started process 52100 to run task
+[2024-12-20T20:08:19.604+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'one_task_dag', 'one_task', 'manual__2024-12-20T20:08:17.302413+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/one_task_dag.py', '--cfg-path', '/tmp/tmpco5peqn8']
+[2024-12-20T20:08:19.604+0000] {standard_task_runner.py:85} INFO - Job 4: Subtask one_task
+[2024-12-20T20:08:19.627+0000] {task_command.py:410} INFO - Running <TaskInstance: one_task_dag.one_task manual__2024-12-20T20:08:17.302413+00:00 [running]> on host codespaces-90c33c
+[2024-12-20T20:08:19.923+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Ilan' AIRFLOW_CTX_DAG_ID='one_task_dag' AIRFLOW_CTX_TASK_ID='one_task' AIRFLOW_CTX_EXECUTION_DATE='2024-12-20T20:08:17.302413+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-20T20:08:17.302413+00:00'
+[2024-12-20T20:08:19.923+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-12-20T20:08:19.923+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'echo "hello, linkedin learning!" > /workspaces/hands-on-introdcution-data-engineering-4395021/lab/']
+[2024-12-20T20:08:19.930+0000] {subprocess.py:86} INFO - Output:
+[2024-12-20T20:08:19.931+0000] {subprocess.py:93} INFO - /usr/bin/bash: line 1: /workspaces/hands-on-introdcution-data-engineering-4395021/lab/: No such file or directory
+[2024-12-20T20:08:19.932+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-12-20T20:08:19.936+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-12-20T20:08:19.938+0000] {taskinstance.py:1345} INFO - Marking task as FAILED. dag_id=one_task_dag, task_id=one_task, execution_date=20241220T200817, start_date=20241220T200819, end_date=20241220T200819
+[2024-12-20T20:08:19.947+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 4 for task one_task (Bash command failed. The command returned a non-zero exit code 1.; 52100)
+[2024-12-20T20:08:19.976+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2024-12-20T20:08:19.984+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
